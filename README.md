@@ -4,51 +4,80 @@
 
 Este documento contiene información sobre la herramienta de GIT
 
-## github
+## Github
 GitHub es una plataforma de desarrollo colaborativo de software para alojar proyectos utilizando el sistema de control de versiones Git.
 
 ## Contenido
-- [Sistemas de Control de versiones](#sistemas-de-control-de-versiones-)
-- [Que es GIT](#qué-es-git)
-- [Archivos de Texto y Binarios](#archivos-de-texto-y-binarios-)
-- [Crear un repositorio y un commit](#crear-un-repositorio-y-un-commit-)
-- [Verificar cambios entre archivos DIFF](#verificar-cambios-entre-archivos-diff-)
-- [¿Que es el Staging y los Branch?](#qué-es-el-staging-y-los-branch-)
-- [¿Que es un Merge?](#qué-es-un-merge-)
-- [¿Como volver en el tiempo?](#cómo-volver-en-el-tiempo-)
-- [¿Como revertir cambios?](#cómo-revertir-cambios-)
-- [Repositorios remotos](#repositorios-remotos-)
-- [Peticiones de cambios](#peticiones-de-cambios-)
-- [Merge entre ramas y resolución de conflictos](#merge-entre-ramas-y-resolucion-de-conflictos-)
-- [Gestión de ramas](#gestión-de-ramas)
-- [Forks en control de versiones](#forks-en-control-de-versiones-)
-- [¿Qué son tags?](#que-son-tags-)
-- [GIT fetch, pull y push](#git-fetch-pull-y-push-)
-- [Diferencias de GIT fetch y pull](#diferencias-de-git-fetch-y-pull)
-- [.gitignore](#gitignore)
-- [README.md](#readmemd-)
-- [Convenciones para comentar commits](#convenciones-para-comentar-commits-)
-- [Cómo documentar una solicitud de cambio](#como-documentar-una-solicitud-de-cambio-)
-- [¿Qué es el CODE REVIEW?](#que-es-el-code-review-)
-- [GIT clean y rebase](#git-clean-y-rebase-)
-- [GIT stash](#git-stash-)
-- [GIT cherry-pick](#git-cherry-pick-)
-- [GIT reset y reflog](#git-reset-y-reflog-)
-- [Uso avanzado del commit (amend)](#uso-avanzado-del-commit-amend)
-- [Uso avanzado de checkout](#uso-avanzado-de-checkout)
-- [GIT blame](#git-blame-)
-- [GIT grep y log](#git-grep-y-log-)
-- [Repositorios dentro de otros repositorios (Submódulos)](#repositorios-dentro-de-otros-repositorios-submódulos)
-- [¿Que son los tags?](#que-son-los-tags)
-- [Comandos para la creacion de un tag](#comandos-para-la-creacion-de-un-tag)
-- [Comandos para GIT fetch, pull y push](#comandos-para-git-fetch-pull-y-push)
-- [Comando Basicos de GIT](#comandos-basicos-de-git)
-- [Video Informativo sobre git (explicacion completa)](#video-informativo-sobre-git-explicacion-completa-)
-- [GIT Reset y Reflog](#git-reset-y-reflog)
-- [Uso Avanzado del commit (amend)](#uso-avanzado-del-commint-amend)
-- [Comandos Checkout y Blame](#comandos-checkout-y-blame)
-- [GIT Grep y Log](#git-grep-y-log)
-- [Submodulos](#submodulos)
+- [git-notebook](#git-notebook)
+	- [Introducción de GIT](#introducción-de-git)
+	- [Github](#github)
+	- [Contenido](#contenido)
+		- [Sistemas de Control de versiones 📝](#sistemas-de-control-de-versiones-)
+		- [¿Qué es GIT?](#qué-es-git)
+		- [Archivos de Texto y Binarios 📄](#archivos-de-texto-y-binarios-)
+		- [Crear un repositorio y un commit 📦](#crear-un-repositorio-y-un-commit-)
+		- [Verificar cambios entre archivos ‘DIFF’ 🔎](#verificar-cambios-entre-archivos-diff-)
+	- [¿Qué es el Staging y los Branch? 🌲](#qué-es-el-staging-y-los-branch-)
+		- [¿Qué es un Merge? 🤝](#qué-es-un-merge-)
+	- [¿Cómo volver en el tiempo? 🕧](#cómo-volver-en-el-tiempo-)
+		- [¿Cómo revertir cambios? ⏳](#cómo-revertir-cambios-)
+		- [Flags para git 🏳️](#flags-para-git-️)
+		- [Repositorios remotos 🌐](#repositorios-remotos-)
+		- [Peticiones de cambios ✋](#peticiones-de-cambios-)
+		- [Merge entre ramas y resolución de conflictos ✔️](#merge-entre-ramas-y-resolución-de-conflictos-️)
+		- [Gestión de ramas](#gestión-de-ramas)
+	- [Eliminar una rama local](#eliminar-una-rama-local)
+	- [Forks en control de versiones 🍴](#forks-en-control-de-versiones-)
+		- [¿Qué son tags? 🏷️](#qué-son-tags-️)
+		- [GIT fetch, pull y push 🔴🔵⚪](#git-fetch-pull-y-push-)
+		- [Diferencias de GIT fetch y pull](#diferencias-de-git-fetch-y-pull)
+		- [.gitignore 🙅](#gitignore-)
+		- [README.md 👀](#readmemd-)
+		- [Convenciones para comentar commits 👍](#convenciones-para-comentar-commits-)
+		- [Convenciones para el nombramiento de branchs 👍](#convenciones-para-el-nombramiento-de-branchs-)
+		- [Cómo documentar una solicitud de cambio✏️](#cómo-documentar-una-solicitud-de-cambio️)
+		- [¿Qué es el CODE REVIEW? 🤓](#qué-es-el-code-review-)
+		- [git clean y rebase 🧹](#git-clean-y-rebase-)
+		- [git stash 📚](#git-stash-)
+		- [git cherry-pick 🍒](#git-cherry-pick-)
+- [Comandos de emergencia](#comandos-de-emergencia)
+		- [git reset y reflog 🔄](#git-reset-y-reflog-)
+		- [Uso avanzado del commit (amend)](#uso-avanzado-del-commit-amend)
+		- [Uso avanzado de checkout](#uso-avanzado-de-checkout)
+		- [git blame 🕵️](#git-blame-️)
+		- [git grep y log 🎣](#git-grep-y-log-)
+		- [**Repositorios dentro de otros repositorios (Submódulos)**](#repositorios-dentro-de-otros-repositorios-submódulos)
+	- [GIT HELP](#git-help)
+	- [¿Que son los tags? ��](#que-son-los-tags-)
+		- [Comandos para la creación de un tag](#comandos-para-la-creación-de-un-tag)
+	- [Comandos para la creacion de un tag](#comandos-para-la-creacion-de-un-tag)
+		- [Comandos para git fetch, pull y push](#comandos-para-git-fetch-pull-y-push)
+		- [Comando Basicos de git](#comando-basicos-de-git)
+		- [Vídeo Informativo sobre git (explicacion completa) 🎥](#vídeo-informativo-sobre-git-explicacion-completa-)
+	- [Forks en control de versiones 🍴](#forks-en-control-de-versiones--1)
+	- [Guia de como clonar un repositorio](#guia-de-como-clonar-un-repositorio)
+		- [Flujos de trabajo avanzados](#flujos-de-trabajo-avanzados)
+		- [Convenciones para comentar commit](#convenciones-para-comentar-commit)
+		- [Convenciones para el nombramiento de branchs](#convenciones-para-el-nombramiento-de-branchs)
+		- [¿Cómo documentar una solicitud de cambio?](#cómo-documentar-una-solicitud-de-cambio)
+		- [CODE REVIEW](#code-review)
+		- [git clean y git rebase](#git-clean-y-git-rebase)
+		- [Comandos de emergencias](#comandos-de-emergencias)
+		- [Uso avanzado del commit (amend)](#uso-avanzado-del-commit-amend-1)
+		- [Uso avanzado del checkout](#uso-avanzado-del-checkout)
+		- [git blame](#git-blame)
+		- [git grep](#git-grep)
+		- [git log](#git-log)
+		- [Repositorio dentro de otro repositorio](#repositorio-dentro-de-otro-repositorio)
+		- [git reset y reflog](#git-reset-y-reflog)
+		- [Uso Avanzado del commint (amend)](#uso-avanzado-del-commint-amend)
+		- [Comandos Checkout y Blame](#comandos-checkout-y-blame)
+		- [git grep y log](#git-grep-y-log)
+		- [Submódulos](#submódulos)
+	- [git rm --cached ](#git-rm---cached-)
+- [Git Reset y Reflog: úsese en caso de emergencia](#git-reset-y-reflog-úsese-en-caso-de-emergencia)
+	- [Git nunca olvida, git reflog](#git-nunca-olvida-git-reflog)
+	- [Convenciones para el nombramiento de branchs](#convenciones-para-el-nombramiento-de-branchs-1)
 
 ### Sistemas de Control de versiones 📝
 
@@ -65,19 +94,16 @@ Permite los siguientes puntos :bookmark_tabs: :
 Esto es de gran ayuda para mantener un enfoque en cada desarrollador y facilita visión general en grandes proyectos.
 ### ¿Qué es GIT?
 
-Git es un sistema de control de versiones distribuido que se utiliza principalmente para el desarrollo de software.  
-Permite controlar las diferentes versiones de un proyecto, trabajar en equipo de manera más eficiente y es muy flexible y personalizable.
-Nos ayuda a llevar un control y asi poder gestionar de mejor manera las diferentes versiones que pueden surgir durante un proyecto en nuestro repositorio local y asi posteriormente cargarlo a un repositorio remoto.
+	Git es un sistema de control de versiones distribuido que se utiliza principalmente para el desarrollo de software.
+	Permite controlar las diferentes versiones de un proyecto, trabajar en equipo de manera más eficiente y es muy flexible y personalizable.
+	Nos ayuda a llevar un control y asi poder gestionar de mejor manera las diferentes versiones que pueden surgir durante un proyecto en nuestro repositorio local y asi posteriormente cargarlo a un repositorio remoto.
 
 ### Archivos de Texto y Binarios 📄
 
-En Git se pueden manejar dos tipos de archivos: archivos de texto y archivos binarios. Ambos son manejados de la misma manera,
-creando una copia completa de cada archivo en cada commit, pero los archivos binarios son más grandes y consumen más espacio en disco que los archivos de texto.
-Ademas de que los archivos binarios son más pesados, tambien debemos de tomar en cuenta de que al subir nuevamente este archivo va a volver a cargar todo el programa,
-por esto es recomendable no subier estos tipos de archivos.  
+	En Git se pueden manejar dos tipos de archivos: archivos de texto y archivos binarios. Ambos son manejados de la misma manera,
+	Creando una copia completa de cada archivo en cada commit, pero los archivos binarios son más grandes y consumen más espacio en disco que los archivos de texto. Ademas de que los archivos binarios son más pesados, tambien debemos de tomar en cuenta de que al subir nuevamente este archivo va a volver a cargar todo el programa, por esto es recomendable no subier estos tipos de archivos.  
 
-Los archivos de texto son archivos normales que contienen información almacenada en formato ASCII y que el usuario puede leer.
-Los archivos binarios son archivos normales que contienen información que el sistema puede leer.
+	Los archivos de texto son archivos normales que contienen información almacenada en formato ASCII y que el usuario puede leer. Los archivos binarios son archivos normales que contienen información que el sistema puede leer.
 
 ### Crear un repositorio y un commit 📦
 Pasos:
